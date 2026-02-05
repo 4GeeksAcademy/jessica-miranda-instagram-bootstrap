@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+</head>
+<body>
+    <div class="container-fluid bg-light p-3">
+        <div class="d-flex justify-content-between align-items-center">
+            <!-- Logo izquierdo -->
+            <div class="d-flex align-items-center">
+                <i class="fab fa-instagram me-2 fs-4"></i>
+                <span class="fs-5">Instagram</span>
+            </div>
+            
+            <!-- Botones derecha -->
+            <div class="d-flex align-items-center gap-2">
+                <button type="button" class="btn btn-success">Create a new post</button>
+                <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#"><i class="far fa-user me-2"></i>Profile</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="far fa-bookmark me-2"></i>Saved</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Settings</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Log Out</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+     <!-- Iconos de vista (Feed/Gallery) -->
+    <div class="container-fluid bg-white p-3">
+        <div class="d-flex justify-content-center align-items-center gap-3">
+            <!-- Vista Grid/Gallery -->
+            <button class="btn btn-light">
+                <i class="fas fa-th fs-5"></i>
+            </button>
+            
+            <!-- Vista Feed/List -->
+            <button class="btn btn-primary">
+                <i class="fas fa-square fs-5"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Post de Instagram -->
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+                <!-- Card del Post -->
+                <div class="card border shadow-sm mb-4">
+
+                    <!-- Título del post -->
+                     <div class="card-body pt-2 pb-2">
+                        <div class="d-flex justify-content-between align-items-center">
+                             <h5 class="card-title mb-0">Crazyyy!</h5>
+                              <small class="text-muted">08/24</small>
+                            </div>
+                        </div>
+
+                    
+                    <!-- Imagen del post -->
+                    <img src="https://fastly.picsum.photos/id/219/5000/3333.jpg?hmac=nQIYAD6CmzCXEG3xtEckzbu3iauIE3DpHiqnQy3gdG4" class="w-100" alt="puma">
+                    
+                    <!-- Footer con likes y descripción -->
+                    <div class="card-body">
+                        <div class="d-flex gap-3 mb-2">
+                            <i class="bi bi-heart fs-4"></i>
+                            <i class="bi bi-chat fs-4"></i>
+                            <i class="bi bi-send fs-4"></i>
+                            <i class="bi bi-bookmark ms-auto fs-4"></i>
+                        </div>
+                        <p class="mb-1"><strong>204 Likes</strong></p>
+                        <p class="mb-0">This is an example of a very good photo that you can post on instagram</p>
+                    </div>
+                </div>
+                 <!-- POST 2 -->
+                <div class="card border shadow-sm mb-4">
+                    <div class="card-header bg-white d-flex justify-content-between align-items-center p-3">
+                        <div class="d-flex align-items-center">
+                            <strong>Jessica_Nature</strong>
+                        </div>
+                        <small class="text-muted">08/24</small>
+                    </div>
+                    <img src="https://fastly.picsum.photos/id/244/4288/2848.jpg?hmac=R6j9PBP4aBk2vcEIoOPU4R_nuknizryn2Vq8GGtWTrM" class="w-100" alt="beach">
+                    <div class="card-body">
+                        <div class="d-flex gap-3 mb-2">
+                            <i class="bi bi-heart fs-4"></i>
+                            <i class="bi bi-chat fs-4"></i>
+                            <i class="bi bi-send fs-4"></i>
+                            <i class="bi bi-bookmark ms-auto fs-4"></i>
+                        </div>
+                        <p class="mb-1"><strong>1,432 Likes</strong></p>
+                        <p class="mb-0">Love Nature</p>
+                    </div>
+                </div>
+                <!-- POST 3 -->
+                <div class="card border shadow-sm mb-4">
+                    <div class="card-header bg-white d-flex justify-content-between align-items-center p-3">
+                        <div class="d-flex align-items-center">
+                            <strong>Jessica_Miranda</strong>
+                        </div>
+                        <small class="text-muted">08/24</small>
+                    </div>
+                    <img src="https://fastly.picsum.photos/id/252/5000/3281.jpg?hmac=43dQtOHPvmpknnjz0R6jenAi-V9OW6J8sVKUTVOpAaU" class="w-100" alt="tools">
+                    <div class="card-body">
+                        <div class="d-flex gap-3 mb-2">
+                            <i class="bi bi-heart fs-4"></i>
+                            <i class="bi bi-chat fs-4"></i>
+                            <i class="bi bi-send fs-4"></i>
+                            <i class="bi bi-bookmark ms-auto fs-4"></i>
+                        </div>
+                        <p class="mb-1"><strong>876 Likes</strong></p>
+                        <p class="mb-0">Picture that I like!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Script de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
