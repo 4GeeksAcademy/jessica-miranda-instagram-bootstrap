@@ -9,8 +9,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     
+    <style>
+    .grid-img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+    }
+    </style>
 </head>
 <body>
+    <!-- HEADER -->
     <div class="container-fluid bg-light p-3">
         <div class="d-flex justify-content-between align-items-center">
             <!-- Logo izquierdo -->
@@ -21,7 +29,9 @@
             
             <!-- Botones derecha -->
             <div class="d-flex align-items-center gap-2">
-                <button type="button" class="btn btn-success">Create a new post</button>
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createPostModal">
+                    Create a new post
+                </button>
                 <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown">
                     <i class="fas fa-cog"></i>
                 </button>
@@ -36,41 +46,64 @@
         </div>
     </div>
 
-     <!-- Iconos de vista (Feed/Gallery) -->
+    <!-- Modal -->
+    <div class="modal fade" id="createPostModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create a new post</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="postCaption" class="form-label">Caption:</label>
+                        <textarea class="form-control" id="postCaption" rows="3" placeholder="Add the caption of your post here"></textarea>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-light">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                        <button class="btn btn-light">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Publish</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Iconos -->
     <div class="container-fluid bg-white p-3">
         <div class="d-flex justify-content-center align-items-center gap-3">
-            <!-- Vista Grid/Gallery -->
-            <button class="btn btn-light">
+            <button class="btn btn-light" id="btnGrid">
                 <i class="fas fa-th fs-5"></i>
             </button>
-            
-            <!-- Vista Feed/List -->
-            <button class="btn btn-primary">
+            <button class="btn btn-primary" id="btnFeed">
                 <i class="fas fa-square fs-5"></i>
             </button>
         </div>
     </div>
 
-    <!-- Post de Instagram -->
-    <div class="container mt-4">
+    <!-- (FEED) -->
+    <div class="container mt-4" id="feedView">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6">
                 <!-- Card del Post -->
                 <div class="card border shadow-sm mb-4">
-
                     <!-- Título del post -->
-                     <div class="card-body pt-2 pb-2">
+                    <div class="card-body pt-2 pb-2">
                         <div class="d-flex justify-content-between align-items-center">
-                             <h5 class="card-title mb-0">Crazyyy!</h5>
-                              <small class="text-muted">08/24</small>
-                            </div>
+                            <h5 class="card-title mb-0">Crazyyy!</h5>
+                            <small class="text-muted">08/24</small>
                         </div>
-
-                    
+                    </div>
                     <!-- Imagen del post -->
                     <img src="https://fastly.picsum.photos/id/219/5000/3333.jpg?hmac=nQIYAD6CmzCXEG3xtEckzbu3iauIE3DpHiqnQy3gdG4" class="w-100" alt="puma">
-                    
-                    <!-- Footer con likes y descripción -->
+
                     <div class="card-body">
                         <div class="d-flex gap-3 mb-2">
                             <i class="bi bi-heart fs-4"></i>
@@ -82,7 +115,7 @@
                         <p class="mb-0">This is an example of a very good photo that you can post on instagram</p>
                     </div>
                 </div>
-                 <!-- POST 2 -->
+                <!-- POST 2 -->
                 <div class="card border shadow-sm mb-4">
                     <div class="card-header bg-white d-flex justify-content-between align-items-center p-3">
                         <div class="d-flex align-items-center">
@@ -126,9 +159,67 @@
         </div>
     </div>
 
-    
+    <!-- GRID!!! -->
+    <div class="container-fluid mt-4 d-none" id="gridView">
+        <div class="row g-1">
+            <div class="col-4">
+                <img src="https://fastly.picsum.photos/id/61/3264/2448.jpg?hmac=Xi3Kq99U5tueFi0aajgUP0yWAL4xwCHg5ZXGZRLTqyI" class="grid-img" alt="post">
+            </div>
+            <div class="col-4">
+                <img src="https://fastly.picsum.photos/id/68/4608/3072.jpg?hmac=0KfOS12jehkc6HbfMXWj3GMFve9kVs82dYsN12Npn2Y" class="grid-img" alt="post">
+            </div>
+            <div class="col-4">
+                <img src="https://fastly.picsum.photos/id/79/2000/3011.jpg?hmac=TQsXWj0kLBLRXbSAh2Pygog1-cOefqpjEoKyl0uD3tg" class="grid-img" alt="post">
+            </div>
+            <div class="col-4">
+                <img src="https://fastly.picsum.photos/id/88/1280/1707.jpg?hmac=NnkwPVDBTVxHkc4rALB_fyu-OHY2usdm7iRk5El7JC4" class="grid-img" alt="post">
+            </div>
+            <div class="col-4">
+                <img src="https://fastly.picsum.photos/id/144/4912/2760.jpg?hmac=pMOciMOb_baom6Llz91g42ZAqJP7Gi2Y1AfA37zfh_s" class="grid-img" alt="post">
+            </div>
+            <div class="col-4">
+                <img src="https://fastly.picsum.photos/id/192/2352/2352.jpg?hmac=jN5UExysObV7_BrOYLdxoDKzm_c_lRM6QkaInKT_1Go" class="grid-img" alt="post">
+            </div>
+            <div class="col-4">
+                <img src="https://fastly.picsum.photos/id/209/1920/1280.jpg?hmac=VkEKEKhTEKOSFL4n-N4aLnbGGpV5hxuCs2tx_ny4y5g" class="grid-img" alt="post">
+            </div>
+            <div class="col-4">
+                <img src="https://fastly.picsum.photos/id/236/2592/1944.jpg?hmac=pzEOq8SYpXeA5SYgdYMsS5TV8IoXlzLLJLDK5TVVThc" class="grid-img" alt="post">
+            </div>
+            <div class="col-4">
+                <img src="https://fastly.picsum.photos/id/238/2560/1440.jpg?hmac=wKo4dLHwDntZmO_fdtnKtsnmRcPMACca3m5J5vx2AVc" class="grid-img" alt="post">
+            </div>
+        </div>
+    </div>
 
     <!-- Script de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script para cambiar vistas :)!! -->
+    <script>
+        const btnGrid = document.getElementById('btnGrid');
+        const btnFeed = document.getElementById('btnFeed');
+        const gridView = document.getElementById('gridView');
+        const feedView = document.getElementById('feedView');
+
+        btnGrid.addEventListener('click', function() {
+            gridView.classList.remove('d-none');
+            feedView.classList.add('d-none');
+            btnGrid.classList.remove('btn-light');
+            btnGrid.classList.add('btn-primary');
+            btnFeed.classList.remove('btn-primary');
+            btnFeed.classList.add('btn-light');
+        });
+
+        btnFeed.addEventListener('click', function() {
+            feedView.classList.remove('d-none');
+            gridView.classList.add('d-none');
+            btnFeed.classList.remove('btn-light');
+            btnFeed.classList.add('btn-primary');
+            btnGrid.classList.remove('btn-primary');
+            btnGrid.classList.add('btn-light');
+        });
+    </script>
+
 </body>
 </html>
